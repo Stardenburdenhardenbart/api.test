@@ -22,30 +22,7 @@ app.get('/rechner/:operator', (req,res) => {
         operator: operator
     });
 });
-app.get('/rechner/:derivate', (req,res) => {
-    const { x, y } = req.body
-    const { operator } = req.params
-    var answer = null
-    if (operator == "addition") {
-        answer = x+y
-    }
-    else if (operator == "subtraktion"){
-        answer = x-y
-    }
-    else if (operator == "multiplikation"){
-        answer = x*y
-    }
-    else if (operator == "division"){
-        answer = x/y
-    }
-    else if (operator == "root"){
-        answer = Math.pow(x, 1/y)
-    }
-    res.status(200).send({
-        answer: answer,
-        operator: operator
-    });
-});
+
 const express = require('express');
 const app = express();
 
